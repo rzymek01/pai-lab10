@@ -47,6 +47,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.refreshCacheBtn = new System.Windows.Forms.Button();
+            this.dumpDataBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 25);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
@@ -64,7 +66,7 @@
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(111, 25);
+            this.stateLabel.Location = new System.Drawing.Point(97, 9);
             this.stateLabel.Name = "stateLabel";
             this.stateLabel.Size = new System.Drawing.Size(10, 13);
             this.stateLabel.TabIndex = 1;
@@ -82,7 +84,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(193, 25);
+            this.label2.Location = new System.Drawing.Point(179, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 3;
@@ -91,7 +93,7 @@
             // totalAmountLabel
             // 
             this.totalAmountLabel.AutoSize = true;
-            this.totalAmountLabel.Location = new System.Drawing.Point(310, 25);
+            this.totalAmountLabel.Location = new System.Drawing.Point(296, 9);
             this.totalAmountLabel.Name = "totalAmountLabel";
             this.totalAmountLabel.Size = new System.Drawing.Size(13, 13);
             this.totalAmountLabel.TabIndex = 4;
@@ -100,9 +102,10 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -115,14 +118,14 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 374);
+            this.bindingNavigator1.Location = new System.Drawing.Point(96, 365);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(391, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(203, 25);
             this.bindingNavigator1.TabIndex = 11;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -192,30 +195,58 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Visible = false;
             // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Enabled = false;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Visible = false;
             // 
             // bindingNavigatorDeleteItem
             // 
+            this.bindingNavigatorDeleteItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Enabled = false;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Visible = false;
+            // 
+            // refreshCacheBtn
+            // 
+            this.refreshCacheBtn.Location = new System.Drawing.Point(30, 34);
+            this.refreshCacheBtn.Name = "refreshCacheBtn";
+            this.refreshCacheBtn.Size = new System.Drawing.Size(111, 23);
+            this.refreshCacheBtn.TabIndex = 12;
+            this.refreshCacheBtn.Text = "Odśwież cache";
+            this.refreshCacheBtn.UseVisualStyleBackColor = true;
+            this.refreshCacheBtn.Click += new System.EventHandler(this.refreshCacheBtn_Click);
+            // 
+            // dumpDataBtn
+            // 
+            this.dumpDataBtn.Location = new System.Drawing.Point(244, 34);
+            this.dumpDataBtn.Name = "dumpDataBtn";
+            this.dumpDataBtn.Size = new System.Drawing.Size(118, 23);
+            this.dumpDataBtn.TabIndex = 13;
+            this.dumpDataBtn.Text = "Zapisz na dysk";
+            this.dumpDataBtn.UseVisualStyleBackColor = true;
+            this.dumpDataBtn.Click += new System.EventHandler(this.dumpDataBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 399);
+            this.Controls.Add(this.dumpDataBtn);
+            this.Controls.Add(this.refreshCacheBtn);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.totalAmountLabel);
             this.Controls.Add(this.label2);
@@ -251,6 +282,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Button refreshCacheBtn;
+        private System.Windows.Forms.Button dumpDataBtn;
     }
 }
 
