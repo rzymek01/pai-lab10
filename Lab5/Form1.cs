@@ -110,10 +110,12 @@ namespace Lab5
             column.Name = "Liczba";
             dataGridView1.Columns.Add(column);
 
+            dataGridView1.Height = 280;
+            dataGridView1.Width = 300;
+            dataGridView1.AutoSize = false;
+
             // Initialize the form. 
             panel1.Controls.Add(dataGridView1);
-            panel1.AutoSize = true;
-            //panel1.Text = "DataGridView object binding demo";
 
             bindingSource1.ListChanged += new ListChangedEventHandler(ListChanged);
             // Populate the data source.
@@ -143,8 +145,8 @@ namespace Lab5
             {
                 bindingSource1.Add(t);
             }
-            dataGridView1.Refresh();
-            panel1.Update();
+            //dataGridView1.Refresh();
+            //panel1.Update();
         }
 
         class PageOffsetList : System.ComponentModel.IListSource
