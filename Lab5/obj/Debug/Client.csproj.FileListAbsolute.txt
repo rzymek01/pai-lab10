@@ -1,0 +1,3 @@
+C:\Users\Maciej\Documents\GitHub\Lab7\Lab5\bin\Debug\Lab5.exe.config
+C:\Users\Maciej\Documents\GitHub\Lab7\Lab5\obj\Debug\Lab5.exe
+C:\Users\Maciej\Documents\GitHub\Lab7\Lab5\obj\Debug\Lab5.pdb

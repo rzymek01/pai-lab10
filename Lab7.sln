@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5", "Lab5\Lab5.csproj", "{79262AA2-E7F9-42D0-ABAA-B9F22458D153}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Lab5\Client.csproj", "{79262AA2-E7F9-42D0-ABAA-B9F22458D153}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DD22A023-6FBB-4BBB-9C9B-48FC5B9536D9} = {DD22A023-6FBB-4BBB-9C9B-48FC5B9536D9}
 	EndProjectSection
