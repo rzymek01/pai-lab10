@@ -68,6 +68,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service\BusinessDelegate.cs" />
+    <Compile Include="Service\InvestorsBD.cs" />
+    <Compile Include="Service\ServiceLocator.cs" />
     <Compile Include="StateObserver.cs" />
     <Compile Include="Statictics.cs" />
     <Compile Include="StatisticsObserver.cs" />
@@ -84,6 +87,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\ClassLibrary1.InvestorCETO.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary1.InvestorsTO.datasource" />
     <None Include="Properties\DataSources\ClassLibrary1.TransactionTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -23,8 +23,14 @@ namespace WcfService1.DBAL
 
         public List<TransactionTO> FindAll()
         {
-            var dstList = new List<TransactionTO>();
             var srcList = mMP.GetCollection();
+            var dstList = convertListToTO(srcList);
+            return dstList;
+        }
+
+        public List<TransactionTO> convertListToTO(List<Transaction> srcList)
+        {
+            var dstList = new List<TransactionTO>();
             foreach (Transaction srcT in srcList)
             {
                 dstList.Add(createTransferObject(srcT));

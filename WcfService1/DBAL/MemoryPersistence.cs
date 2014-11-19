@@ -11,6 +11,8 @@ namespace WcfService1.DBAL
     public class MemoryPersistence
     {
         private List<Transaction> mData = new List<Transaction>();
+        private List<Brocker> mBrockers = new List<Brocker>();
+        private List<InvestorCE> mInvestors = new List<InvestorCE>();
         private String mFilePath;
 
         public MemoryPersistence(String filePath = "")
@@ -18,6 +20,36 @@ namespace WcfService1.DBAL
             mFilePath = filePath;
         }
 
+        //
+        public List<InvestorCE> GetInvestors()
+        {
+            return mInvestors;
+        }
+
+        public InvestorCE GetSingleInvestor(int id)
+        {
+            var result = mInvestors.Find(item => item.Person.ID == id);
+            return result;
+        }
+
+        //public List<Transaction> GetInvestorTransactions(int id)
+        //{
+
+        //}
+
+        //
+        public List<Brocker> GetBrockers()
+        {
+            return mBrockers;
+        }
+
+        public Brocker GetSingleBrocker(int id)
+        {
+            var result = mBrockers.Find(item => item.ID == id);
+            return result;
+        }
+
+        //
         public List<Transaction> GetCollection()
         {
             return mData;
@@ -83,8 +115,12 @@ namespace WcfService1.DBAL
 
             //@see http://philcurnow.wordpress.com/2013/12/29/serializing-and-deserializing-json-in-c/
 
-            Random rand = new Random();
+            // Brockers
+            mBrockers.Add(new Brocker("Deutsche Bank DB Makler", 1));
+            mBrockers.Add(new Brocker("mBank Biuro Maklerskie", 2));
 
+            // Transactions
+            Random rand = new Random();
             mData.Add(new Transaction(9.1f, mockAmount(rand), 1));
             mData.Add(new Transaction(9.2f, mockAmount(rand), 2));
             mData.Add(new Transaction(9.3f, mockAmount(rand), 3));
@@ -120,6 +156,12 @@ namespace WcfService1.DBAL
             mData.Add(new Transaction(9.2f, mockAmount(rand), 33));
             mData.Add(new Transaction(9.1f, mockAmount(rand), 34));
             mData.Add(new Transaction(9.0f, mockAmount(rand), 35));
+
+            // Investors
+            var iDAO = new InvestorDAO(this);
+            mInvestors.Add(new InvestorCE(iDAO, new Person("Jan", "Kowalski", 1), mData.GetRange(0, 5)));
+            mInvestors.Add(new InvestorCE(iDAO, new Person("Adam", "Kulczyk", 2), mData.GetRange(5, 5)));
+            mInvestors.Add(new InvestorCE(iDAO, new Person("Joanna", "Smith", 3), mData.GetRange(10, 5)));
 
             return true;
         }

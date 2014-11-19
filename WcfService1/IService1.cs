@@ -13,7 +13,14 @@ namespace WcfService1
     public interface IService1
     {
         [OperationContract]
+        InvestorsTO GetInvestors();
+
+        [OperationContract]
         List<TransactionTO> GetPage(int pageNo, int pageSize);
+        
+        [OperationContract]
+        [FaultContract(typeof(NotFoundException))]
+        InvestorCETO GetInvestor(int investorId);
 
         [OperationContract]
         bool Save(TransactionTO t);

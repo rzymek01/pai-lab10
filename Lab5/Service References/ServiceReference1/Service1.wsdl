@@ -7,11 +7,26 @@
       <xsd:import schemaLocation="http://localhost:3187/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ClassLibrary1" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_GetInvestors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvestors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetInvestors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvestorsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetPage_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPage" />
   </wsdl:message>
   <wsdl:message name="IService1_GetPage_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetInvestor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvestor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetInvestor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvestorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetInvestor_NotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ClassLibrary1" name="detail" element="q1:NotFoundException" />
   </wsdl:message>
   <wsdl:message name="IService1_Save_InputMessage">
     <wsdl:part name="parameters" element="tns:Save" />
@@ -32,9 +47,18 @@
     <wsdl:part name="parameters" element="tns:DumpDataResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="GetInvestors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetInvestors" message="tns:IService1_GetInvestors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetInvestorsResponse" message="tns:IService1_GetInvestors_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPage" message="tns:IService1_GetPage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPageResponse" message="tns:IService1_GetPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetInvestor" message="tns:IService1_GetInvestor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetInvestorResponse" message="tns:IService1_GetInvestor_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetInvestorNotFoundExceptionFault" name="NotFoundExceptionFault" message="tns:IService1_GetInvestor_NotFoundExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Save">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Save" message="tns:IService1_Save_InputMessage" />
@@ -51,6 +75,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInvestors">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetInvestors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetPage">
       <soap:operation soapAction="http://tempuri.org/IService1/GetPage" style="document" />
       <wsdl:input>
@@ -59,6 +92,18 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvestor">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetInvestor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="NotFoundExceptionFault">
+        <soap:fault use="literal" name="NotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Save">
       <soap:operation soapAction="http://tempuri.org/IService1/Save" style="document" />

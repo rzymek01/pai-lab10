@@ -7,37 +7,12 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    #region "business object"
-
-    [DataContract]
-    public class Transaction
+    public class Transaction : TransactionTO
     {
         public Transaction(float price = 0.0f, int amount = 0, int id = -1)
+            : base(price, amount, id)
         {
-            Price = price;
-            Amount = amount;
-            ID = id;
-        }
 
-        [DataMember]
-        public float Price
-        {
-            get;
-            set;
-        }
-
-        [DataMember]
-        public int Amount
-        {
-            get;
-            set;
-        }
-
-        [DataMember]
-        public int ID
-        {
-            get;
-            set;
         }
 
         //public override bool Equals(object obj)
@@ -57,5 +32,5 @@ namespace ClassLibrary1
         //    return (this.Equals(other.PartId));
         //}
     }
-    #endregion
+
 }

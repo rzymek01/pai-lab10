@@ -19,5 +19,17 @@ namespace WcfService1.DBAL
             var dao = new TransactionDAO(mMP);
             return dao;
         }
+
+        public InvestorDAO GetInvestorDAO()
+        {
+            var dao = new InvestorDAO(mMP);
+            return dao;
+        }
+
+        public BrockerDAO GetBrockerDAO()
+        {
+            var dao = new BrockerDAO(mMP);
+            return dao;
+        }
     }
 }

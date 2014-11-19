@@ -65,9 +65,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBAL\DAOFactory.cs" />
+    <Compile Include="DBAL\IInvestorDAO.cs" />
+    <Compile Include="DBAL\IBrockerDAO.cs" />
     <Compile Include="DBAL\ITransactionDAO.cs" />
     <Compile Include="DBAL\MemoryPersistence.cs" />
+    <Compile Include="DBAL\BrockerDAO.cs" />
     <Compile Include="DBAL\TransactionDAO.cs" />
+    <Compile Include="InvestorCE.cs" />
+    <Compile Include="DBAL\InvestorDAO.cs" />
+    <Compile Include="InvestorsTOA.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

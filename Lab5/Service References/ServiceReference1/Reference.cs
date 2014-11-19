@@ -15,11 +15,24 @@ namespace Lab5.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestors", ReplyAction="http://tempuri.org/IService1/GetInvestorsResponse")]
+        ClassLibrary1.InvestorsTO GetInvestors();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestors", ReplyAction="http://tempuri.org/IService1/GetInvestorsResponse")]
+        System.Threading.Tasks.Task<ClassLibrary1.InvestorsTO> GetInvestorsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPage", ReplyAction="http://tempuri.org/IService1/GetPageResponse")]
         ClassLibrary1.TransactionTO[] GetPage(int pageNo, int pageSize);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPage", ReplyAction="http://tempuri.org/IService1/GetPageResponse")]
         System.Threading.Tasks.Task<ClassLibrary1.TransactionTO[]> GetPageAsync(int pageNo, int pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestor", ReplyAction="http://tempuri.org/IService1/GetInvestorResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClassLibrary1.NotFoundException), Action="http://tempuri.org/IService1/GetInvestorNotFoundExceptionFault", Name="NotFoundException", Namespace="http://schemas.datacontract.org/2004/07/ClassLibrary1")]
+        ClassLibrary1.InvestorCETO GetInvestor(int investorId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestor", ReplyAction="http://tempuri.org/IService1/GetInvestorResponse")]
+        System.Threading.Tasks.Task<ClassLibrary1.InvestorCETO> GetInvestorAsync(int investorId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Save", ReplyAction="http://tempuri.org/IService1/SaveResponse")]
         bool Save(ClassLibrary1.TransactionTO t);
@@ -67,12 +80,28 @@ namespace Lab5.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
+        public ClassLibrary1.InvestorsTO GetInvestors() {
+            return base.Channel.GetInvestors();
+        }
+        
+        public System.Threading.Tasks.Task<ClassLibrary1.InvestorsTO> GetInvestorsAsync() {
+            return base.Channel.GetInvestorsAsync();
+        }
+        
         public ClassLibrary1.TransactionTO[] GetPage(int pageNo, int pageSize) {
             return base.Channel.GetPage(pageNo, pageSize);
         }
         
         public System.Threading.Tasks.Task<ClassLibrary1.TransactionTO[]> GetPageAsync(int pageNo, int pageSize) {
             return base.Channel.GetPageAsync(pageNo, pageSize);
+        }
+        
+        public ClassLibrary1.InvestorCETO GetInvestor(int investorId) {
+            return base.Channel.GetInvestor(investorId);
+        }
+        
+        public System.Threading.Tasks.Task<ClassLibrary1.InvestorCETO> GetInvestorAsync(int investorId) {
+            return base.Channel.GetInvestorAsync(investorId);
         }
         
         public bool Save(ClassLibrary1.TransactionTO t) {

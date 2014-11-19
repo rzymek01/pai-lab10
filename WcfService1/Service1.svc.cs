@@ -15,6 +15,8 @@ namespace WcfService1
         private DBAL.MemoryPersistence mMP;
         private ValueListHandler mVLH;
         private DBAL.TransactionDAO mDAO;
+        private DBAL.InvestorDAO iDAO;
+        private DBAL.BrockerDAO bDAO;
 
         public Service1()
         {
@@ -23,8 +25,29 @@ namespace WcfService1
 
             var daoFactory = new DBAL.DAOFactory(mMP);
             mDAO = daoFactory.GetTransactionDAO();
+            iDAO = daoFactory.GetInvestorDAO();
+            bDAO = daoFactory.GetBrockerDAO();
 
             Refresh();
+        }
+
+        public InvestorsTO GetInvestors()
+        {
+            var toa = new InvestorsTOA(bDAO, iDAO);
+            var result = toa.GetInvestors();
+            return result;
+        }
+
+        public InvestorCETO GetInvestor(int investorId)
+        {
+            var inv = iDAO.GetFullById(investorId);
+            if (null != inv)
+                return iDAO.createFullTransferObject(inv);
+            else
+            {
+                var ex = new NotFoundException("Nie odnaleziono inwestora o id równym " + investorId.ToString());
+                throw new FaultException<NotFoundException>(ex);
+            }
         }
 
         public List<TransactionTO> GetPage(int pageNo, int pageSize)
