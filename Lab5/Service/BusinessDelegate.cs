@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab5.Service
 {
-    abstract public class BusinessDelegate<T>
+    abstract public class BusinessDelegate<T> where T : ICommunicationObject
     {
         protected T Service
         {
@@ -28,7 +29,13 @@ namespace Lab5.Service
 
         protected void reconnect()
         {
-            Service = (T)ServiceLocator.GetService(SERVICE_ID);
+            Service = (T)ServiceLocator.Instance.GetService(SERVICE_ID);
+            Service.Open();
+        }
+
+        ~BusinessDelegate()
+        {
+            Service.Close();
         }
     }
 }

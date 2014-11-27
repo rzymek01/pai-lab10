@@ -18,39 +18,51 @@ namespace Lab5.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestors", ReplyAction="http://tempuri.org/IService1/GetInvestorsResponse")]
         ClassLibrary1.InvestorsTO GetInvestors();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestors", ReplyAction="http://tempuri.org/IService1/GetInvestorsResponse")]
-        System.Threading.Tasks.Task<ClassLibrary1.InvestorsTO> GetInvestorsAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetInvestors", ReplyAction="http://tempuri.org/IService1/GetInvestorsResponse")]
+        System.IAsyncResult BeginGetInvestors(System.AsyncCallback callback, object asyncState);
+        
+        ClassLibrary1.InvestorsTO EndGetInvestors(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPage", ReplyAction="http://tempuri.org/IService1/GetPageResponse")]
         ClassLibrary1.TransactionTO[] GetPage(int pageNo, int pageSize);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPage", ReplyAction="http://tempuri.org/IService1/GetPageResponse")]
-        System.Threading.Tasks.Task<ClassLibrary1.TransactionTO[]> GetPageAsync(int pageNo, int pageSize);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetPage", ReplyAction="http://tempuri.org/IService1/GetPageResponse")]
+        System.IAsyncResult BeginGetPage(int pageNo, int pageSize, System.AsyncCallback callback, object asyncState);
+        
+        ClassLibrary1.TransactionTO[] EndGetPage(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestor", ReplyAction="http://tempuri.org/IService1/GetInvestorResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(ClassLibrary1.NotFoundException), Action="http://tempuri.org/IService1/GetInvestorNotFoundExceptionFault", Name="NotFoundException", Namespace="http://schemas.datacontract.org/2004/07/ClassLibrary1")]
         ClassLibrary1.InvestorCETO GetInvestor(int investorId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInvestor", ReplyAction="http://tempuri.org/IService1/GetInvestorResponse")]
-        System.Threading.Tasks.Task<ClassLibrary1.InvestorCETO> GetInvestorAsync(int investorId);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetInvestor", ReplyAction="http://tempuri.org/IService1/GetInvestorResponse")]
+        System.IAsyncResult BeginGetInvestor(int investorId, System.AsyncCallback callback, object asyncState);
+        
+        ClassLibrary1.InvestorCETO EndGetInvestor(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Save", ReplyAction="http://tempuri.org/IService1/SaveResponse")]
         bool Save(ClassLibrary1.TransactionTO t);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Save", ReplyAction="http://tempuri.org/IService1/SaveResponse")]
-        System.Threading.Tasks.Task<bool> SaveAsync(ClassLibrary1.TransactionTO t);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Save", ReplyAction="http://tempuri.org/IService1/SaveResponse")]
+        System.IAsyncResult BeginSave(ClassLibrary1.TransactionTO t, System.AsyncCallback callback, object asyncState);
+        
+        bool EndSave(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Refresh", ReplyAction="http://tempuri.org/IService1/RefreshResponse")]
         void Refresh();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Refresh", ReplyAction="http://tempuri.org/IService1/RefreshResponse")]
-        System.Threading.Tasks.Task RefreshAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Refresh", ReplyAction="http://tempuri.org/IService1/RefreshResponse")]
+        System.IAsyncResult BeginRefresh(System.AsyncCallback callback, object asyncState);
+        
+        void EndRefresh(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DumpData", ReplyAction="http://tempuri.org/IService1/DumpDataResponse")]
         void DumpData();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DumpData", ReplyAction="http://tempuri.org/IService1/DumpDataResponse")]
-        System.Threading.Tasks.Task DumpDataAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/DumpData", ReplyAction="http://tempuri.org/IService1/DumpDataResponse")]
+        System.IAsyncResult BeginDumpData(System.AsyncCallback callback, object asyncState);
+        
+        void EndDumpData(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -59,7 +71,119 @@ namespace Lab5.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetInvestorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetInvestorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ClassLibrary1.InvestorsTO Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ClassLibrary1.InvestorsTO)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetPageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetPageCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ClassLibrary1.TransactionTO[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ClassLibrary1.TransactionTO[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetInvestorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetInvestorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ClassLibrary1.InvestorCETO Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ClassLibrary1.InvestorCETO)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SaveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public SaveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<Lab5.ServiceReference1.IService1>, Lab5.ServiceReference1.IService1 {
+        
+        private BeginOperationDelegate onBeginGetInvestorsDelegate;
+        
+        private EndOperationDelegate onEndGetInvestorsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetInvestorsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetPageDelegate;
+        
+        private EndOperationDelegate onEndGetPageDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetPageCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetInvestorDelegate;
+        
+        private EndOperationDelegate onEndGetInvestorDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetInvestorCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSaveDelegate;
+        
+        private EndOperationDelegate onEndSaveDelegate;
+        
+        private System.Threading.SendOrPostCallback onSaveCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRefreshDelegate;
+        
+        private EndOperationDelegate onEndRefreshDelegate;
+        
+        private System.Threading.SendOrPostCallback onRefreshCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDumpDataDelegate;
+        
+        private EndOperationDelegate onEndDumpDataDelegate;
+        
+        private System.Threading.SendOrPostCallback onDumpDataCompletedDelegate;
         
         public Service1Client() {
         }
@@ -80,52 +204,310 @@ namespace Lab5.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<GetInvestorsCompletedEventArgs> GetInvestorsCompleted;
+        
+        public event System.EventHandler<GetPageCompletedEventArgs> GetPageCompleted;
+        
+        public event System.EventHandler<GetInvestorCompletedEventArgs> GetInvestorCompleted;
+        
+        public event System.EventHandler<SaveCompletedEventArgs> SaveCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RefreshCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DumpDataCompleted;
+        
         public ClassLibrary1.InvestorsTO GetInvestors() {
             return base.Channel.GetInvestors();
         }
         
-        public System.Threading.Tasks.Task<ClassLibrary1.InvestorsTO> GetInvestorsAsync() {
-            return base.Channel.GetInvestorsAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetInvestors(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetInvestors(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ClassLibrary1.InvestorsTO EndGetInvestors(System.IAsyncResult result) {
+            return base.Channel.EndGetInvestors(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetInvestors(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetInvestors(callback, asyncState);
+        }
+        
+        private object[] OnEndGetInvestors(System.IAsyncResult result) {
+            ClassLibrary1.InvestorsTO retVal = this.EndGetInvestors(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetInvestorsCompleted(object state) {
+            if ((this.GetInvestorsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetInvestorsCompleted(this, new GetInvestorsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetInvestorsAsync() {
+            this.GetInvestorsAsync(null);
+        }
+        
+        public void GetInvestorsAsync(object userState) {
+            if ((this.onBeginGetInvestorsDelegate == null)) {
+                this.onBeginGetInvestorsDelegate = new BeginOperationDelegate(this.OnBeginGetInvestors);
+            }
+            if ((this.onEndGetInvestorsDelegate == null)) {
+                this.onEndGetInvestorsDelegate = new EndOperationDelegate(this.OnEndGetInvestors);
+            }
+            if ((this.onGetInvestorsCompletedDelegate == null)) {
+                this.onGetInvestorsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInvestorsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetInvestorsDelegate, null, this.onEndGetInvestorsDelegate, this.onGetInvestorsCompletedDelegate, userState);
         }
         
         public ClassLibrary1.TransactionTO[] GetPage(int pageNo, int pageSize) {
             return base.Channel.GetPage(pageNo, pageSize);
         }
         
-        public System.Threading.Tasks.Task<ClassLibrary1.TransactionTO[]> GetPageAsync(int pageNo, int pageSize) {
-            return base.Channel.GetPageAsync(pageNo, pageSize);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetPage(int pageNo, int pageSize, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetPage(pageNo, pageSize, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ClassLibrary1.TransactionTO[] EndGetPage(System.IAsyncResult result) {
+            return base.Channel.EndGetPage(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetPage(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int pageNo = ((int)(inValues[0]));
+            int pageSize = ((int)(inValues[1]));
+            return this.BeginGetPage(pageNo, pageSize, callback, asyncState);
+        }
+        
+        private object[] OnEndGetPage(System.IAsyncResult result) {
+            ClassLibrary1.TransactionTO[] retVal = this.EndGetPage(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetPageCompleted(object state) {
+            if ((this.GetPageCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetPageCompleted(this, new GetPageCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetPageAsync(int pageNo, int pageSize) {
+            this.GetPageAsync(pageNo, pageSize, null);
+        }
+        
+        public void GetPageAsync(int pageNo, int pageSize, object userState) {
+            if ((this.onBeginGetPageDelegate == null)) {
+                this.onBeginGetPageDelegate = new BeginOperationDelegate(this.OnBeginGetPage);
+            }
+            if ((this.onEndGetPageDelegate == null)) {
+                this.onEndGetPageDelegate = new EndOperationDelegate(this.OnEndGetPage);
+            }
+            if ((this.onGetPageCompletedDelegate == null)) {
+                this.onGetPageCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetPageCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetPageDelegate, new object[] {
+                        pageNo,
+                        pageSize}, this.onEndGetPageDelegate, this.onGetPageCompletedDelegate, userState);
         }
         
         public ClassLibrary1.InvestorCETO GetInvestor(int investorId) {
             return base.Channel.GetInvestor(investorId);
         }
         
-        public System.Threading.Tasks.Task<ClassLibrary1.InvestorCETO> GetInvestorAsync(int investorId) {
-            return base.Channel.GetInvestorAsync(investorId);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetInvestor(int investorId, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetInvestor(investorId, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ClassLibrary1.InvestorCETO EndGetInvestor(System.IAsyncResult result) {
+            return base.Channel.EndGetInvestor(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetInvestor(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int investorId = ((int)(inValues[0]));
+            return this.BeginGetInvestor(investorId, callback, asyncState);
+        }
+        
+        private object[] OnEndGetInvestor(System.IAsyncResult result) {
+            ClassLibrary1.InvestorCETO retVal = this.EndGetInvestor(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetInvestorCompleted(object state) {
+            if ((this.GetInvestorCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetInvestorCompleted(this, new GetInvestorCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetInvestorAsync(int investorId) {
+            this.GetInvestorAsync(investorId, null);
+        }
+        
+        public void GetInvestorAsync(int investorId, object userState) {
+            if ((this.onBeginGetInvestorDelegate == null)) {
+                this.onBeginGetInvestorDelegate = new BeginOperationDelegate(this.OnBeginGetInvestor);
+            }
+            if ((this.onEndGetInvestorDelegate == null)) {
+                this.onEndGetInvestorDelegate = new EndOperationDelegate(this.OnEndGetInvestor);
+            }
+            if ((this.onGetInvestorCompletedDelegate == null)) {
+                this.onGetInvestorCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInvestorCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetInvestorDelegate, new object[] {
+                        investorId}, this.onEndGetInvestorDelegate, this.onGetInvestorCompletedDelegate, userState);
         }
         
         public bool Save(ClassLibrary1.TransactionTO t) {
             return base.Channel.Save(t);
         }
         
-        public System.Threading.Tasks.Task<bool> SaveAsync(ClassLibrary1.TransactionTO t) {
-            return base.Channel.SaveAsync(t);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginSave(ClassLibrary1.TransactionTO t, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSave(t, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndSave(System.IAsyncResult result) {
+            return base.Channel.EndSave(result);
+        }
+        
+        private System.IAsyncResult OnBeginSave(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            ClassLibrary1.TransactionTO t = ((ClassLibrary1.TransactionTO)(inValues[0]));
+            return this.BeginSave(t, callback, asyncState);
+        }
+        
+        private object[] OnEndSave(System.IAsyncResult result) {
+            bool retVal = this.EndSave(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnSaveCompleted(object state) {
+            if ((this.SaveCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SaveCompleted(this, new SaveCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SaveAsync(ClassLibrary1.TransactionTO t) {
+            this.SaveAsync(t, null);
+        }
+        
+        public void SaveAsync(ClassLibrary1.TransactionTO t, object userState) {
+            if ((this.onBeginSaveDelegate == null)) {
+                this.onBeginSaveDelegate = new BeginOperationDelegate(this.OnBeginSave);
+            }
+            if ((this.onEndSaveDelegate == null)) {
+                this.onEndSaveDelegate = new EndOperationDelegate(this.OnEndSave);
+            }
+            if ((this.onSaveCompletedDelegate == null)) {
+                this.onSaveCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSaveCompleted);
+            }
+            base.InvokeAsync(this.onBeginSaveDelegate, new object[] {
+                        t}, this.onEndSaveDelegate, this.onSaveCompletedDelegate, userState);
         }
         
         public void Refresh() {
             base.Channel.Refresh();
         }
         
-        public System.Threading.Tasks.Task RefreshAsync() {
-            return base.Channel.RefreshAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRefresh(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRefresh(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRefresh(System.IAsyncResult result) {
+            base.Channel.EndRefresh(result);
+        }
+        
+        private System.IAsyncResult OnBeginRefresh(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginRefresh(callback, asyncState);
+        }
+        
+        private object[] OnEndRefresh(System.IAsyncResult result) {
+            this.EndRefresh(result);
+            return null;
+        }
+        
+        private void OnRefreshCompleted(object state) {
+            if ((this.RefreshCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RefreshCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RefreshAsync() {
+            this.RefreshAsync(null);
+        }
+        
+        public void RefreshAsync(object userState) {
+            if ((this.onBeginRefreshDelegate == null)) {
+                this.onBeginRefreshDelegate = new BeginOperationDelegate(this.OnBeginRefresh);
+            }
+            if ((this.onEndRefreshDelegate == null)) {
+                this.onEndRefreshDelegate = new EndOperationDelegate(this.OnEndRefresh);
+            }
+            if ((this.onRefreshCompletedDelegate == null)) {
+                this.onRefreshCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRefreshCompleted);
+            }
+            base.InvokeAsync(this.onBeginRefreshDelegate, null, this.onEndRefreshDelegate, this.onRefreshCompletedDelegate, userState);
         }
         
         public void DumpData() {
             base.Channel.DumpData();
         }
         
-        public System.Threading.Tasks.Task DumpDataAsync() {
-            return base.Channel.DumpDataAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDumpData(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDumpData(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndDumpData(System.IAsyncResult result) {
+            base.Channel.EndDumpData(result);
+        }
+        
+        private System.IAsyncResult OnBeginDumpData(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginDumpData(callback, asyncState);
+        }
+        
+        private object[] OnEndDumpData(System.IAsyncResult result) {
+            this.EndDumpData(result);
+            return null;
+        }
+        
+        private void OnDumpDataCompleted(object state) {
+            if ((this.DumpDataCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DumpDataCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DumpDataAsync() {
+            this.DumpDataAsync(null);
+        }
+        
+        public void DumpDataAsync(object userState) {
+            if ((this.onBeginDumpDataDelegate == null)) {
+                this.onBeginDumpDataDelegate = new BeginOperationDelegate(this.OnBeginDumpData);
+            }
+            if ((this.onEndDumpDataDelegate == null)) {
+                this.onEndDumpDataDelegate = new EndOperationDelegate(this.OnEndDumpData);
+            }
+            if ((this.onDumpDataCompletedDelegate == null)) {
+                this.onDumpDataCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDumpDataCompleted);
+            }
+            base.InvokeAsync(this.onBeginDumpDataDelegate, null, this.onEndDumpDataDelegate, this.onDumpDataCompletedDelegate, userState);
         }
     }
 }

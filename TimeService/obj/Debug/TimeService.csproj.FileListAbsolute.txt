@@ -1,0 +1,8 @@
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\bin\TimeService.dll.config
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\bin\TimeService.dll
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\bin\TimeService.pdb
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\bin\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\bin\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\obj\Debug\TimeService.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\obj\Debug\TimeService.dll
+C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\obj\Debug\TimeService.pdb

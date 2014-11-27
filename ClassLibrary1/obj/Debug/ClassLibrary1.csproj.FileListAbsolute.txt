@@ -8,3 +8,8 @@ C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
 C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

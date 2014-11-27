@@ -2,3 +2,8 @@ C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\bin\Release\ClassLibrary1.dl
 C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\bin\Release\ClassLibrary1.pdb
 C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\obj\Release\ClassLibrary1.dll
 C:\Users\Maciej\Documents\GitHub\Lab7\ClassLibrary1\obj\Release\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\obj\Release\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab8\ClassLibrary1\obj\Release\ClassLibrary1.pdb

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ClassLibrary1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ClassLibrary1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TransactionTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionTO" nillable="true" type="tns:TransactionTO" />
+  <xs:complexType name="InvestorsTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brockers" nillable="true" type="tns:ArrayOfBrockerTO" />
+      <xs:element minOccurs="0" name="Investors" nillable="true" type="tns:ArrayOfInvestorCETO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvestorsTO" nillable="true" type="tns:InvestorsTO" />
+  <xs:complexType name="ArrayOfBrockerTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BrockerTO" nillable="true" type="tns:BrockerTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBrockerTO" nillable="true" type="tns:ArrayOfBrockerTO" />
+  <xs:complexType name="BrockerTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BrockerTO" nillable="true" type="tns:BrockerTO" />
+  <xs:complexType name="ArrayOfInvestorCETO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvestorCETO" nillable="true" type="tns:InvestorCETO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvestorCETO" nillable="true" type="tns:ArrayOfInvestorCETO" />
+  <xs:complexType name="InvestorCETO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:PersonTO" />
+      <xs:element minOccurs="0" name="Transactions" nillable="true" type="tns:ArrayOfTransactionTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvestorCETO" nillable="true" type="tns:InvestorCETO" />
+  <xs:complexType name="PersonTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonTO" nillable="true" type="tns:PersonTO" />
+  <xs:complexType name="ArrayOfTransactionTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionTO" nillable="true" type="tns:TransactionTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransactionTO" nillable="true" type="tns:ArrayOfTransactionTO" />
+  <xs:complexType name="NotFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotFoundException" nillable="true" type="tns:NotFoundException" />
+</xs:schema>

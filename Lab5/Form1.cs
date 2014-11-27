@@ -188,7 +188,7 @@ namespace Lab5
                 Console.WriteLine("invGridView: Person id: " + item.ID);
 
                 // pobranie listy transakcji
-                var bd = new Service.InvestorsBD();
+                var bd = Service.FacadeBD.Instance;
                 var data = bd.GetInvestor(item.ID);
                 loadInvestor(data);
             }
@@ -196,7 +196,7 @@ namespace Lab5
 
         private void loadData()
         {
-            var bd = new Service.InvestorsBD();
+            var bd = Service.FacadeBD.Instance;
             var data = bd.GetInvestors();
             
             loadBrockers(data.Brockers);
@@ -311,9 +311,36 @@ namespace Lab5
         private void button2_Click(object sender, EventArgs e)
         {
             int id = 404;
-            var bd = new Service.InvestorsBD();
+            var bd = Service.InvestorsBD.Instance;
             var data = bd.GetInvestor(id);
             loadInvestor(data);
+        }
+
+        private static void callback(IAsyncResult result)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Nawiązano połączenie z domem maklerskim");
+            MessageBox.Show(sb.ToString());
+
+            //var transaction = (TransactionTO)result.AsyncState;
+            //if (null == transaction)
+            //{
+            //    MessageBox.Show("Nie udało się pobrać najnowszej transakcji");
+            //    return;
+            //}
+
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append("Najnowsza transakcja:");
+            //sb.Append("\ncena: " + transaction.Price.ToString());
+            //sb.Append("\nwolumen: " + transaction.Amount.ToString());
+            //MessageBox.Show(sb.ToString());
+        }
+
+        /** operacja async **/
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var bd = Service.FacadeBD.Instance;
+            bd.GetLatestTransaction(callback);
         }
 
         //private void label4_Click(object sender, EventArgs e)

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,28 @@ namespace Lab5.Service
     public class InvestorsBD : BusinessDelegate<ServiceReference1.Service1Client>
     {
 
-        public InvestorsBD() : base("investors")
+        static private InvestorsBD cInstance;
+        static public InvestorsBD Instance
+        {
+            [MethodImpl(MethodImplOptions.Synchronized)]
+            get
+            {
+                if (null == cInstance)
+                {
+                    cInstance = new InvestorsBD();
+                }
+                return cInstance;
+            }
+        }
+
+        private InvestorsBD() : base("investors")
         {
         
         }
 
         public InvestorsTO GetInvestors()
         {
-            Service.Open();
             var data = Service.GetInvestors();
-            Service.Close();
 
             return data;
         }
@@ -31,8 +44,7 @@ namespace Lab5.Service
             InvestorCETO data = null;
             try
             {
-                Service.Open();
-                data = Service.GetInvestor(id); 
+                data = Service.GetInvestor(id);
             }
             catch (FaultException<NotFoundException> ex)
             {
@@ -40,7 +52,7 @@ namespace Lab5.Service
             }
             finally
             {
-                Service.Close();
+            
             }
 
             return data;
