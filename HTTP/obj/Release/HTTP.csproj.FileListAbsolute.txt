@@ -3,3 +3,6 @@ C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\bin\Release\HTTP.exe
 C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\bin\Release\HTTP.pdb
 C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\obj\Release\HTTP.exe
 C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\obj\Release\HTTP.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTP\bin\Release\HTTP.exe.config
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTP\obj\Release\HTTP.exe
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTP\obj\Release\HTTP.pdb
