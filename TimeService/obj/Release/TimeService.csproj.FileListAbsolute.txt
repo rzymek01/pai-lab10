@@ -5,3 +5,11 @@ C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\bin\ClassLibrary1.dll
 C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\bin\ClassLibrary1.pdb
 C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\obj\Release\TimeService.dll
 C:\Users\Maciej\Documents\GitHub\Lab8\TimeService\obj\Release\TimeService.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\bin\TimeService.dll.config
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\bin\TimeService.dll
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\bin\TimeService.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\bin\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\bin\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\obj\Release\TimeService.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\obj\Release\TimeService.dll
+C:\Users\Maciej\Documents\GitHub\Lab9\TimeService\obj\Release\TimeService.pdb

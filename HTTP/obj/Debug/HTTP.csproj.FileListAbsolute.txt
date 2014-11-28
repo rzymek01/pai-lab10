@@ -1,0 +1,6 @@
+C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\bin\Debug\HTTP.exe.config
+C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\bin\Debug\HTTP.exe
+C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\bin\Debug\HTTP.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\obj\Debug\HTTP.exe
+C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\obj\Debug\HTTP.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\HTTP\obj\Debug\HTTP.csprojResolveAssemblyReference.cache

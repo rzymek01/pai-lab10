@@ -19,3 +19,14 @@ C:\Users\Maciej\Documents\GitHub\Lab8\Lab5\obj\Release\Lab5.Properties.Resources
 C:\Users\Maciej\Documents\GitHub\Lab8\Lab5\obj\Release\Client.csproj.GenerateResource.Cache
 C:\Users\Maciej\Documents\GitHub\Lab8\Lab5\obj\Release\Lab5.exe
 C:\Users\Maciej\Documents\GitHub\Lab8\Lab5\obj\Release\Lab5.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\bin\Release\Lab5.exe.config
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\obj\Release\Lab5.exe
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\obj\Release\Lab5.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\obj\Release\Client.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\obj\Release\Lab5.Form1.resources
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\obj\Release\Lab5.Properties.Resources.resources
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\obj\Release\Client.csproj.GenerateResource.Cache
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\bin\Release\Lab5.exe
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\bin\Release\Lab5.pdb
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\bin\Release\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab9\Lab5\bin\Release\ClassLibrary1.pdb

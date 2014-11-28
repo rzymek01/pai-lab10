@@ -17,6 +17,12 @@ namespace TimeService
         [OperationContract]
         TransactionTO GetLatestTransaction();
 
+        [OperationContract]
+        String GetInvestorsPage();
+
+        [OperationContract]
+        String GetTransactionsPage();
     }
+
 
 }

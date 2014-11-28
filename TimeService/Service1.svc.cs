@@ -19,5 +19,20 @@ namespace TimeService
             var trans = new TransactionTO(207.9f, 10000, 999);
             return trans;
         }
+
+
+        public string GetInvestorsPage()
+        {
+            return "<html><head><title>Inwestorzy</title></head><body>" +
+                "<h1>Inwestorzy</h1><a href=\"transactions\">Skocz do transakcji</a>" +
+                "</body></html>";
+        }
+
+        public string GetTransactionsPage()
+        {
+            return "<html><head><title>Transakcje</title></head><body>" +
+                "<h1>Transakcje</h1><a href=\"investors\">Skocz do inwestorów</a>" +
+                "</body></html>";
+        }
     }
 }
