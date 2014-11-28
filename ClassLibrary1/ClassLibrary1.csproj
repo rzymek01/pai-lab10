@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Brocker.cs" />
+    <Compile Include="Filter\FilterManager.cs" />
+    <Compile Include="Filter\IFilter.cs" />
+    <Compile Include="Filter\LoginFilter.cs" />
     <Compile Include="InvestorCETO.cs" />
     <Compile Include="InvestorsTO.cs" />
     <Compile Include="NotFoundException.cs" />

@@ -1,4 +1,5 @@
-﻿using HTTP.View;
+﻿using HTTP.Server;
+using HTTP.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,13 @@ namespace HTTP.Dispatcher
 {
     public class DispatcherView
     {
+        private ViewHelper mViewHelper;
+
+        public DispatcherView(ViewHelper vh)
+        {
+            mViewHelper = vh;
+        }
+
         public String Route(String path)
         {
             String name = path;
@@ -26,10 +34,16 @@ namespace HTTP.Dispatcher
             switch (name)
             {
                 case "transactions":
-                    view = new TransactionView();
+                    view = new TransactionView(mViewHelper);
                     break;
                 case "investors":
-                    view = new InvestorView();
+                    view = new InvestorView(mViewHelper);
+                    break;
+                case "composite":
+                    view = new CompositeView(mViewHelper);
+                    break;
+                case "login":
+                    view = new LoginView(mViewHelper);
                     break;
                 default:
                     break;

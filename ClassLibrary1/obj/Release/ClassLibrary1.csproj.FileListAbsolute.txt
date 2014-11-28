@@ -11,3 +11,7 @@ C:\Users\Maciej\Documents\GitHub\Lab9\ClassLibrary1\bin\Release\ClassLibrary1.dl
 C:\Users\Maciej\Documents\GitHub\Lab9\ClassLibrary1\bin\Release\ClassLibrary1.pdb
 C:\Users\Maciej\Documents\GitHub\Lab9\ClassLibrary1\obj\Release\ClassLibrary1.dll
 C:\Users\Maciej\Documents\GitHub\Lab9\ClassLibrary1\obj\Release\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab10\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab10\ClassLibrary1\obj\Release\ClassLibrary1.pdb

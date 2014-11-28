@@ -16,18 +16,35 @@ namespace HTTP.Server
     public class Server : IServer
     {
         private FrontController mFrontCtrl;
+        private ViewHelper mViewHelper;
         public Server()
         {
-            mFrontCtrl = new FrontController();
+            mViewHelper = new ViewHelper();
+            mFrontCtrl = new FrontController(mViewHelper);
         }
 
         public System.IO.Stream Get(string path)
         {
+            if (!mViewHelper.Logged)
+            {
+                path = "login";
+            }
+
             string result = mFrontCtrl.Process(path);
             byte[] resultBytes = Encoding.UTF8.GetBytes(result);
             WebOperationContext.Current.OutgoingResponse.ContentType = "text/html";
             return new MemoryStream(resultBytes);
         }
-        
+
+        public Stream Auth(string login, string passwd)
+        {
+            Console.WriteLine(login + " " + passwd);
+            mViewHelper.Auth(login, passwd);
+
+            string result = (mViewHelper.Logged) ? "zalogowano" : "niezalogowano";
+            byte[] resultBytes = Encoding.UTF8.GetBytes(result);
+            WebOperationContext.Current.OutgoingResponse.ContentType = "text/html";
+            return new MemoryStream(resultBytes);
+        }
     }
 }

@@ -1,0 +1,8 @@
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\bin\Release\HTTP.exe.config
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\bin\Release\HTTP.exe
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\bin\Release\HTTP.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\bin\Release\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\bin\Release\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\obj\Release\HTTP.exe
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\obj\Release\HTTP.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTPsimple1\obj\Release\HTTPdynamic1.csprojResolveAssemblyReference.cache

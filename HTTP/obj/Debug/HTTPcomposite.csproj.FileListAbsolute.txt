@@ -1,0 +1,3 @@
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTP\bin\Debug\HTTP.exe.config
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTP\obj\Debug\HTTP.exe
+C:\Users\Maciej\Documents\GitHub\Lab10\HTTP\obj\Debug\HTTP.pdb

@@ -1,4 +1,5 @@
 ﻿using HTTP.Dispatcher;
+using HTTP.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,12 @@ namespace HTTP.Controller
     public class FrontController
     {
         private DispatcherView mDispatcher;
+        private ViewHelper mViewHelper;
 
-        public FrontController()
+        public FrontController(ViewHelper vh)
         {
-            mDispatcher = new DispatcherView();
+            mViewHelper = vh;
+            mDispatcher = new DispatcherView(mViewHelper);
         }
 
         public String Process(String path)

@@ -10,6 +10,7 @@ namespace HTTP
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             var host = new ServiceHost(typeof(Server.Server), new Uri[] { new Uri("http://localhost:8080") });

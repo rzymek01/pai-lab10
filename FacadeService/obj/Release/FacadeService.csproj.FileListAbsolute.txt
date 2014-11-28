@@ -13,3 +13,11 @@ C:\Users\Maciej\Documents\GitHub\Lab9\FacadeService\bin\ClassLibrary1.pdb
 C:\Users\Maciej\Documents\GitHub\Lab9\FacadeService\obj\Release\FacadeService.dll
 C:\Users\Maciej\Documents\GitHub\Lab9\FacadeService\obj\Release\FacadeService.pdb
 C:\Users\Maciej\Documents\GitHub\Lab9\FacadeService\obj\Release\FacadeService.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\bin\FacadeService.dll.config
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\bin\FacadeService.dll
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\bin\FacadeService.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\bin\ClassLibrary1.dll
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\bin\ClassLibrary1.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\obj\Release\FacadeService.dll
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\obj\Release\FacadeService.pdb
+C:\Users\Maciej\Documents\GitHub\Lab10\FacadeService\obj\Release\FacadeService.csprojResolveAssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HTTP.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,12 @@ namespace HTTP.View
 {
     public class InvestorView : IView
     {
-        public string Render()
+        public InvestorView (ViewHelper vh) : base(vh)
+        {
+ 
+        }
+
+        override public string Render()
         {
             var client = new ViewService.Service1Client();
             client.Open();

@@ -16,8 +16,9 @@ namespace HTTP.Server
         [WebInvoke(Method = "GET", UriTemplate = "/{path}")]
         System.IO.Stream Get(string path);
 
-        //[OperationContract]
-        //[WebInvoke(Method = "GET", UriTemplate = "/Add?num1={num1}&num2{num2}", ResponseFormat = WebMessageFormat.Json)]
-        //string Add(string num1, string num2);
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/auth?login={login}&passwd={passwd}")]
+        System.IO.Stream Auth(String login, String passwd);
+
     }
 }
